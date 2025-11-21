@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deisy Katherine Martínez Chávez - Asistente Administrativa & Apoyo a Proyectos</title>
+    <meta name="description" content="CV profesional de Deisy Katherine Martínez Chávez - Técnica en Diseño e Integración de Multimedia con experiencia en apoyo administrativo, gestión de proyectos comunitarios y comunicación visual">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ESTILOS PRINCIPALES - OPTIMIZADOS PARA GITHUB */
+        :root {
+            --primary-color: #2c5e8c;
+            --secondary-color: #4a7bab;
+            --accent-color: #6a9bc8;
+            --light-accent: #d4e4f3;
+            --background-light: #f0f6fc;
+            --text-dark: #333333;
+            --text-medium: #555555;
+            --text-light: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f0f6fc 0%, #d4e4f3 100%);
+            padding: 20px;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .cv-container {
+            max-width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .cv-container:hover {
+            transform: translateY(-5px);
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, var(--light-accent), #b8d4eb);
+            padding: 30px 40px;
+            color: var(--primary-color);
+            text-align: center;
+            position: relative;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #b8d4eb, #f0f0f0);
+        }
+
+        .name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* CONTENIDO PRINCIPAL */
+        .main-content {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            flex: 1;
+            background: var(--background-light);
+            padding: 25px;
+            border-right: 1px solid #e9ecef;
+        }
+
+        .content {
+            flex: 2;
+            padding: 25px;
+        }
+
+        /* SECCIONES */
+        .section {
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid var(--light-accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .section-title:hover {
+            color: var(--primary-color);
+        }
+
+        .section-title i {
+            font-size: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .section-title.active i {
+            transform: rotate(90deg);
+        }
+
+        /* HABILIDADES */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .skills-category {
+            margin-bottom: 12px;
+        }
+
+        .category-title {
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .skills-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skills-list li {
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: var(--text-medium);
+            padding-left: 12px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .skills-list li:hover {
+            color: var(--primary-color);
+        }
+
+        .skills-list li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            transition: color 0.3s ease;
+        }
+
+        .skills-list li:hover:before {
+            color: var(--primary-color);
+        }
+
+        /* EXPERIENCIA */
+        .experience-item, .education-item {
+            margin-bottom: 16px;
+            padding: 12px;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 3px solid var(--light-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .experience-item:hover, .education-item:hover {
+            transform: translateX(5px);
+            background: #f5f5f5;
+            border-left-color: var(--accent-color);
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 14px;
+        }
+
+        .item-date {
+            color: var(--accent-color);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+
+        .item-subtitle {
+            font-weight: 500;
+            color: var(--secondary-color);
+            margin-bottom: 6px;
+            font-size: 13px;
+        }
+
+        .item-description {
+            color: var(--text-light);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* QR CODE DINÁMICO */
+        .qr-section {
+            text-align: center;
+            margin-top: 20px;
+            padding: 15px;
+            background: var(--background-light);
+            border-radius: 10px;
+            border: 2px solid var(--light-accent);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .qr-section:hover {
+            transform: scale(1.02);
+            border-color: var(--accent-color);
+            box-shadow: 0 5px 15px rgba(106, 155, 200, 0.2);
+        }
+
+        .qr-section img {
+            border-radius: 8px;
+            border: 2px solid var(--light-accent);
+            transition: all 0.3s ease;
+        }
+
+        .qr-section:hover img {
+            border-color: var(--accent-color);
+        }
+
+        .url-display {
+            background: var(--light-accent);
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin: 10px 0;
+            font-size: 11px;
+            word-break: break-all;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .qr-section:hover .url-display {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        /* BOTÓN DE IMPRESIÓN DINÁMICO */
+        .print-button-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .print-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(106, 155, 200, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .print-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(106, 155, 200, 0.4);
+        }
+
+        .print-btn:active {
+            transform: translateY(0);
+        }
+
+        .print-btn.pulse {
+            animation: pulse 1s infinite;
+        }
+
+        /* ESTILOS PARA IMPRESIÓN */
+        @media print {
+            body {
+                background: white !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                font-size: 12pt;
+            }
+            
+            .cv-container {
+                box-shadow: none !important;
+                margin: 0 !important;
+                max-width: none !important;
+                min-height: auto !important;
+                border-radius: 0 !important;
+            }
+            
+            .print-button-container,
+            .qr-section {
+                display: none !important;
+            }
+            
+            .header {
+                background: var(--light-accent) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .sidebar {
+                background: var(--background-light) !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            
+            .section, .experience-item, .education-item {
+                page-break-inside: avoid !important;
+                break-inside: avoid !important;
+            }
+            
+            .item-description, .profile-text {
+                font-size: 11pt !important;
+                line-height: 1.5 !important;
+            }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .print-button-container {
+                position: relative;
+                top: auto;
+                right: auto;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .print-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* TEXTOS */
+        .profile-text {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--text-medium);
+            text-align: justify;
+        }
+        
+        .reference-item {
+            margin-bottom: 12px;
+            font-size: 12px;
+        }
+        
+        .reference-name {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .reference-position {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        /* IDIOMAS */
+        .language-item {
+            margin-bottom: 10px;
+        }
+
+        .skill-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+            font-size: 12px;
+            color: var(--text-dark);
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: #e9ecef;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 3px;
+            transition: width 1s ease-in-out;
+        }
+
+        /* ANIMACIONES */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(106, 155, 200, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(106, 155, 200, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(106, 155, 200, 0);
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            color: var(--accent-color);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: var(--primary-color);
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- BOTÓN DINÁMICO DE IMPRESIÓN -->
+    <div class="print-button-container">
+        <button class="print-btn" onclick="handlePrint()">
+            <i class="fas fa-print"></i> 
+            <span class="btn-text">Imprimir CV</span>
+        </button>
+    </div>
+
+    <!-- CONTENIDO PRINCIPAL DEL CV -->
+    <div class="cv-container" id="cv-content">
+        <!-- ENCABEZADO -->
+        <header class="header">
+            <h1 class="name">Deisy Katherine Martínez Chávez</h1>
+            <div class="title">Asistente Administrativa & Apoyo a Proyectos Comunitarios</div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>trabajaconkathe@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+57 321 379 5430</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Vistahermosa, Meta - Colombia</span>
+                </div>
+            </div>
+        </header>
+        
+        <!-- CONTENIDO PRINCIPAL -->
+        <main class="main-content">
+            <!-- BARRA LATERAL -->
+            <aside class="sidebar">
+                <!-- PERFIL PROFESIONAL -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-user"></i> Perfil Profesional</h2>
+                    <p class="profile-text">Profesional con formación técnica y más de dos años de experiencia en labores administrativas, atención al cliente y apoyo en gestión de proyectos comunitarios. Persona organizada, proactiva y con excelentes habilidades de comunicación. Competencias sólidas en gestión documental, atención al público, manejo de agendas y soporte administrativo general, complementadas con habilidades en diseño gráfico y comunicación visual para el apoyo en proyectos institucionales.</p>
+                </section>
+                
+                <!-- HABILIDADES TÉCNICAS -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-code"></i> Habilidades Técnicas</h2>
+                    <div class="skills-grid">
+                        <div class="skills-category">
+                            <div class="category-title">Administrativas</div>
+                            <ul class="skills-list">
+                                <li>Gestión Documental y Archivo</li>
+                                <li>Atención Telefónica y Presencial</li>
+                                <li>Manejo de Agenda y Calendarios</li>
+                                <li>Gestión de Correspondencia</li>
+                                <li>Control de Inventarios</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <div class="category-title">Apoyo a Proyectos & Comunicación</div>
+                            <ul class="skills-list">
+                                <li>Diseño Gráfico Básico (Canva)</li>
+                                <li>Creación de Afiches y Volantes</li>
+                                <li>Gestión de Redes Sociales</li>
+                                <li>Edición de Video Básica (CapCut)</li>
+                                <li>Apoyo en Logística de Eventos</li>
+                            </ul>
+                        </div>
+                        <div class="skills-category">
+                            <div class="category-title">Herramientas</div>
+                            <ul class="skills-list">
+                                <li>Microsoft Office</li>
+                                <li>Google Workspace</li>
+                                <li>Herramientas Ofimáticas</li>
+                                <li>Gestión de Correo Electrónico</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HABILIDADES PERSONALES -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-brain"></i> Habilidades Personales</h2>
+                    <ul class="skills-list">
+                        <li>Comunicación Efectiva y Asertiva</li>
+                        <li>Orientación al Servicio y Atención al Cliente</li>
+                        <li>Organización y Gestión del Tiempo</li>
+                        <li>Trabajo en Equipo y Colaboración</li>
+                        <li>Adaptabilidad y Aprendizaje Rápido</li>
+                        <li>Responsabilidad y Compromiso</li>
+                    </ul>
+                </section>
+                
+                <!-- DISPONIBILIDAD -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-clock"></i> Disponibilidad</h2>
+                    <ul class="skills-list">
+                        <li>Medio Turno (Mañana o Tarde)</li>
+                        <li>Presencial o Remoto</li>
+                        <li>Fines de Semana (Flexible)</li>
+                        <li>Vistahermosa y Municipios Aledaños</li>
+                    </ul>
+                </section>
+
+                <!-- IDIOMAS -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-language"></i> Idiomas</h2>
+                    <div class="language-item">
+                        <div class="skill-name">Español (Nativo)</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="language-item">
+                        <div class="skill-name">Inglés (Básico)</div>
+                        <div class="skill-bar">
+                            <div class="skill-level" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- QR CODE DINÁMICO -->
+                <div class="qr-section" onclick="copyURL()">
+                    <p style="margin-bottom: 10px; font-weight: 500; color: var(--primary-color);">📱 Escanea para ver mi CV online</p>
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://trabajaconkathe-dk.github.io/cv-alcaldia/" 
+                         alt="QR Code para mi CV"
+                         id="qr-code">
+                    <div class="url-display">
+                        <small id="url-text">https://trabajaconkathe-dk.github.io/cv-alcaldia/</small>
+                    </div>
+                    <p style="font-size: 10px; color: var(--text-light); margin-top: 5px;">👆 Haz clic para copiar URL</p>
+                </div>
+
+                <!-- REDES SOCIALES -->
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/trabajaconkathe" class="social-link" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:trabajaconkathe@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+573213795430" class="social-link" title="Llamar">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </aside>
+            
+            <!-- CONTENIDO PRINCIPAL -->
+            <div class="content">
+                <!-- EXPERIENCIA LABORAL -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiencia Laboral</h2>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Asistente Administrativa</h3>
+                            <div class="item-date">2024 – 2025</div>
+                        </div>
+                        <div class="item-subtitle">ASOMUDEM - Asociación de Mujeres Emprendedoras | Vistahermosa, Meta</div>
+                        <div class="item-description">
+                            Apoyo en gestión documental, seguimiento de proyectos comunitarios y atención al público. Coordinación de talleres y actividades. Organización de archivos, informes y correspondencia institucional. Manejo de agenda y logística de eventos. <strong>Creación de material visual</strong> (afiches, flyers) para la promoción de talleres y actividades en redes sociales.
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Asistente Administrativa</h3>
+                            <div class="item-date">2023 – 2024</div>
+                        </div>
+                        <div class="item-subtitle">Consultorio Jurídico de Asesorías y Conciliaciones | Vistahermosa, Meta</div>
+                        <div class="item-description">
+                            Recepción y registro de usuarios. Manejo de documentación y control de archivo físico y digital. Apoyo en trámites administrativos y coordinación de agendas para el equipo jurídico. Atención telefónica y presencial.
+                        </div>
+                    </article>
+                    
+                    <article class="experience-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Asesora de Ventas</h3>
+                            <div class="item-date">Junio 2025 – Julio 2025</div>
+                        </div>
+                        <div class="item-subtitle">Consuerte del Meta | Vistahermosa, Meta</div>
+                        <div class="item-description">
+                            Atención personalizada al cliente y asesoramiento en servicios. Manejo de caja, recargas y transacciones. Cumplimiento sistemático de metas de venta. Fidelización de clientes mediante servicio de calidad.
+                        </div>
+                    </article>
+                </section>
+                
+                <!-- FORMACIÓN ACADÉMICA -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Formación Académica</h2>
+                    <article class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Técnica en Diseño e Integración de Multimedia</h3>
+                            <div class="item-date">2023</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Servicio Nacional de Aprendizaje</div>
+                    </article>
+                    
+                    <article class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Bachiller Académico</h3>
+                            <div class="item-date">2023</div>
+                        </div>
+                        <div class="item-subtitle">Institución Educativa Los Centauros, Vistahermosa, Meta</div>
+                    </article>
+                </section>
+                
+                <!-- FORMACIÓN COMPLEMENTARIA -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-certificate"></i> Formación Complementaria</h2>
+                    <article class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Servicio al Cliente</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Técnicas de atención y servicio al cliente</div>
+                    </article>
+                    
+                    <article class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Habilidades Administrativas</h3>
+                            <div class="item-date">2023-2024</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Gestión documental, organización y planificación</div>
+                    </article>
+                    
+                    <article class="education-item">
+                        <div class="item-header">
+                            <h3 class="item-title">Marketing Digital & Estrategia</h3>
+                            <div class="item-date">2024</div>
+                        </div>
+                        <div class="item-subtitle">SENA - Estrategia de Marketing de Contenidos Digitales</div>
+                    </article>
+                </section>
+                
+                <!-- REFERENCIAS -->
+                <section class="section">
+                    <h2 class="section-title"><i class="fas fa-users"></i> Referencias</h2>
+                    <div class="reference-item">
+                        <div class="reference-name">María Cecilia Lozano</div>
+                        <div class="reference-position">Representante legal de ASOMUDEM</div>
+                        <div><i class="fas fa-phone"></i> 311 296 1083</div>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <div class="reference-name">Ángela Cadavid Gaitán</div>
+                        <div class="reference-position">Representante legal y referente comunitaria</div>
+                        <div><i class="fas fa-phone"></i> 310 223 0357</div>
+                    </div>
+                    
+                    <div class="reference-item">
+                        <div class="reference-name">Jenifer Tatiana</div>
+                        <div class="reference-position">Compañera en proyectos comunitarios</div>
+                        <div><i class="fas fa-phone"></i> 312 380 1154</div>
+                    </div>
+                    <p style="font-style: italic; margin-top: 8px; color: var(--text-light); font-size: 11px;">Disponibles bajo solicitud</p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // FUNCIÓN DINÁMICA DE IMPRESIÓN
+        function handlePrint() {
+            const printBtn = document.querySelector('.print-btn');
+            const btnText = printBtn.querySelector('.btn-text');
+            
+            // Animación de carga
+            printBtn.classList.add('pulse');
+            printBtn.disabled = true;
+            btnText.textContent = 'Preparando...';
+            printBtn.style.background = '#4a7bab';
+            
+            // Simular procesamiento
+            setTimeout(() => {
+                btnText.textContent = 'Imprimiendo...';
+                
+                // Abrir diálogo de impresión
+                setTimeout(() => {
+                    window.print();
+                }, 500);
+                
+            }, 800);
+        }
+
+        // DETECCIÓN DE IMPRESIÓN COMPLETADA
+        window.addEventListener('afterprint', function() {
+            const printBtn = document.querySelector('.print-btn');
+            const btnText = printBtn.querySelector('.btn-text');
+            
+            printBtn.classList.remove('pulse');
+            printBtn.disabled = false;
+            btnText.textContent = 'Imprimir CV';
+            printBtn.style.background = '';
+        });
+
+        // COPIA DINÁMICA DE URL
+        function copyURL() {
+            const url = 'https://trabajaconkathe-dk.github.io/cv-alcaldia/';
+            const urlText = document.getElementById('url-text');
+            const qrSection = document.querySelector('.qr-section');
+            
+            // Efecto visual de copiado
+            qrSection.style.background = 'var(--accent-color)';
+            urlText.style.color = 'white';
+            urlText.innerHTML = '✅ ¡URL copiada!';
+            
+            // Copiar al portapapeles
+            navigator.clipboard.writeText(url).then(function() {
+                // Restaurar después de 2 segundos
+                setTimeout(() => {
+                    qrSection.style.background = '';
+                    urlText.style.color = '';
+                    urlText.innerHTML = 'https://trabajaconkathe-dk.github.io/cv-alcaldia/';
+                }, 2000);
+            });
+        }
+
+        // MEJORAS DINÁMICAS
+        document.addEventListener('DOMContentLoaded', function() {
+            // Secciones plegables para móviles
+            const sectionTitles = document.querySelectorAll('.section-title');
+            sectionTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        const content = this.nextElementSibling;
+                        const isHidden = content.style.display === 'none';
+                        
+                        content.style.display = isHidden ? 'block' : 'none';
+                        this.classList.toggle('active', isHidden);
+                    }
+                });
+            });
+
+            // Efectos hover mejorados
+            const interactiveElements = document.querySelectorAll('.experience-item, .education-item, .skills-list li');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(0)';
+                });
+            });
+
+            // Animación de carga progresiva
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = `${index * 0.1}s`;
+            });
+
+            // Tooltips
+            const printBtn = document.querySelector('.print-btn');
+            printBtn.title = "Haz clic para imprimir o guardar como PDF";
+            
+            const qrSection = document.querySelector('.qr-section');
+            qrSection.title = "Haz clic para copiar la URL de tu CV";
+        });
+
+        // OPTIMIZACIÓN PARA GITHUB PAGES
+        console.log('CV optimizado para Alcaldía - Guarda como index.html para GitHub Pages');
+    </script>
+</body>
+</html>
